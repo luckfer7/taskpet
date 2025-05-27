@@ -1,9 +1,19 @@
+import Container from "@/Components/Container";
+import Header from "@/Components/Header";
+import PetArea from "@/Components/Pet-area";
+import TaskContainer from "@/Components/Tasks-list";
+import TaskList from "@/Components/Tasks-list";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-      <h1>olá</h1>
+      <Header>taskpet</Header>
+      <Container className="h-screen border flex" >
+        <PetArea />
+        <TaskContainer />
+      </Container>
+      
     </div>
   );
 }
