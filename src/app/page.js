@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <Header>taskpet</Header>
-      <Container className="h-screen border flex" >
+      <Container className=" flex h-screen justify-evenly" >
         <PetArea />
         <TaskContainer />
       </Container>
@@ -17,3 +17,5 @@ export default function Home() {
     </div>
   );
 }
+
+//h-screen border flex
