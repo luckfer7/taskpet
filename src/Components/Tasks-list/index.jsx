@@ -4,7 +4,6 @@ import Title from "../Title";
 
 export default function TaskContainer ({}) {
     return(
-<<<<<<< HEAD
         <Container
             className="
                 w-150
@@ -40,15 +39,6 @@ export default function TaskContainer ({}) {
                     <p className="text-x1"> X </p>
                 </div>
             </div>
-
-=======
-       <Container className=" border-2 border-b-fuchsia-900 flex flex-col " >
-            <Title>Lista de tarefas</Title>
-                <button
-                    className='btn btn-primary w-full'>
-                    Adicionar Tarefa
-                </button>
->>>>>>> 3d7aa89cdc219166a934dd1c5d0660c28249c037
         <Button>Ver todas</Button>
        </Container>
     )
