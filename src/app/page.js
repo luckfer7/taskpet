@@ -6,14 +6,18 @@ import PetArea from "@/Components/Pet-area";
 import TaskContainer from "@/Components/Tasks-list";
 
 export default function Home() {
-    const [selectedTask, setSelectedTask] = useState(null)
+    const [tasks, setTasks] = useState([])
+
+    const addTask = (task) => {
+        setTasks((prev) => [...prev, task])
+    }
 
     return (
         <div>
             <Header>taskpet</Header>
             <Container className="flex items-center justify-evenly h-screen" >
-                <PetArea selectedTask={selectedTask}/>
-                <TaskContainer onTaskSelected={setSelectedTask }/>
+                <PetArea addTask={addTask}/>
+                <TaskContainer tasks={tasks} />
             </Container>
         </div>
     )

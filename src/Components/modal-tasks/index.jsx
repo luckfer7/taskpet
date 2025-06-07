@@ -4,13 +4,12 @@ import Container from "../Container";
 
 export default function ModalTasks({ onClose, onSubmit}) {
 
-    const [ nome, setNome ] = useState('');
-    const [ tempo, setTempo ] = useState(''); 
+    const [ name, setName] = useState('');
+    const [ time, setTime ] = useState(''); 
 
-    const adicionarTarefa = (e) => {
+    const addTask = (e) => {
         e.preventDefault();
-        onSubmit({ nome, tempo })
-        console.log({nome, tempo});
+        onSubmit({ name, time })
         
     }
 
@@ -19,15 +18,15 @@ export default function ModalTasks({ onClose, onSubmit}) {
             <div className="bg-blue-200 p-6 rounded-lg shadow-lg w-96" >
                 <h2 className="text-xl font-bold mb-4">Criar nova tarefa</h2>
 
-                <form action="" onSubmit={ adicionarTarefa }>
+                <form action="" onSubmit={ addTask }>
                     <div className="flex flex-col" >
                         <label htmlFor="">Nome da tarefa</label>
-                        <input value={nome} onChange={(e) => setNome(e.target.value)} className=" border-2" type="text" />
+                        <input value={name} onChange={(e) => setName(e.target.value)} className=" border-2" type="text" />
                     </div>
 
                     <div className="flex flex-col" >
                         <label htmlFor="">Tempo</label>
-                        <input value={tempo} onChange={(e) => setTempo(e.target.value)} className=" border-2 " type="text" />
+                        <input value={time} onChange={(e) => setTime(e.target.value)} className=" border-2 " type="text" />
                     </div>
                     
                     <Container className=" flex justify-between " >
