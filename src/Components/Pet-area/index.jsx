@@ -33,11 +33,8 @@ export default function PetArea({ addTask }) {
                 handleCloseModal();
                 }} 
                 onClose={handleCloseModal} 
-                
             />
             )}
-        </Container>
-            
-        
+        </Container> 
     )
 }

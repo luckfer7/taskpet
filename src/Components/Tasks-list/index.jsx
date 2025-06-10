@@ -3,9 +3,7 @@ import Button from "../Button";
 import Container from "../Container";
 import Title from "../Title";
 
-
-
-export default function TaskContainer({ tasks = [] }) {
+export default function TaskContainer({ tasks, updateTask, deleteTask }) {
 
 
     return(
@@ -27,19 +25,23 @@ export default function TaskContainer({ tasks = [] }) {
             <Title className="text-center font-semibold text-2xl mt-3 mb-3 border-3 border-orange-400 rounded-2xl w-70 ">Lista de tarefas</Title>
 
             <div className="flex flex-col gap-2 w-full items-center">
-                {tasks.length === 0 ? (<p className="text-gray-600">Nenhuma tarefa ainda.</p>) : (tasks.map((task, index) => (
-                    <div
-                        key={index}
-                        className={`
-                        flex justify-between items-center cursor-pointer p-3 w-full rounded-2xl text-white`}
-                    >
-                        <span className="font-semibold">{task.name}</span>
-                        <span>{task.time}</span>
-                        <div className="flex items-center gap-x-4">
-                            <p className="text-x1">EDITAR</p>
-                            <p className="text-x1">X</p>
+                {tasks.length === 0 ? (
+                    <p className="text-gray-600">Nenhuma tarefa ainda.</p>
+                ) : (
+                    tasks.map((task) => (
+                        <div
+                            key={task.id}
+                            className={`flex justify-between items-center cursor-pointer p-3 w-full rounded-2xl text-white`}
+                            >
+                            <span className="font-semibold">{task.name}</span>
+                            <span>{task.time}</span>
+
+                            <div className="flex items-center gap-x-4">
+                                <p className="text-x1">EDITAR</p>
+                                <p className="text-x1" onClick={() => deleteTask(task.id)}>X</p>
+                            </div>
                         </div>
-                    </div>)
+                    )
                 
                 ))}
             </div>
