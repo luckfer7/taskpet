@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'tasks'
+const STORAGE_KEY = 'tasks_db'
 export function getTasks() {
     const stored = localStorage.getItem(STORAGE_KEY)
     return stored ? JSON.parse(stored) : []

@@ -12,7 +12,8 @@ import {
 } from "../Services";
 
 export default function Home() {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState([])
+    const[editingTask, setEditingTask] = useState(null)
 
     useEffect(() => {
         setTasks(getTasks());
@@ -34,11 +35,16 @@ export default function Home() {
         <div>
             <Header>taskpet</Header>
             <Container className="flex items-center justify-evenly h-screen" >
-                <PetArea addTask={handleAdd}/>
+                <PetArea
+                    addTask={handleAdd}
+                    updateTask={handleUpdate}
+                    editingTask={editingTask}
+                    clearEditingTask={() => setEditingTask(null)}
+                />
                 <TaskContainer
                     tasks={tasks}
-                    updateTask={handleUpdate}
                     deleteTask={handleDelete}
+                    editingTask={(task) => setEditingTask(task)}
                 />
             </Container>
         </div>
