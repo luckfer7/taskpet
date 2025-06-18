@@ -2,10 +2,9 @@ import { useState } from "react";
 import Button from "../Button";
 import Container from "../Container";
 
-export default function ModalTasks({ onClose, onSubmit}) {
-
-    const [ name, setName] = useState('');
-    const [ time, setTime ] = useState(''); 
+export default function ModalTasks({ task, onClose, onSubmit}) {
+    const [name, setName] = useState(task?.name || '');
+    const [time, setTime] = useState(task?.time || '');
 
     const addTask = (e) => {
         e.preventDefault();
